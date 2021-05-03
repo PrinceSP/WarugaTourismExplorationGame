@@ -1,4 +1,4 @@
-# WarugaTourismExplorationGame
+# Waruga Tourism Exploration Game
 ## my first game project made with unity
 
 # about this game
