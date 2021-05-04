@@ -31,7 +31,7 @@ public class CharacterMovement : MonoBehaviour
       // rb = GetComponent<Rigidbody>();
       controller = GetComponent<CharacterController>();
       characterAnimator = GetComponent<Animator>();
-      counter = 22;
+      counter = 23;
       coinText.text= "Remaining: " + counter;
     }
 
