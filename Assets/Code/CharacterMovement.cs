@@ -16,9 +16,8 @@ public class CharacterMovement : MonoBehaviour
     public Text coinText;
     public AudioSource asource;
     public AudioClip aclip;
-    // public AudioClip jumpClip;
+    public GameObject uiobject;
 
-    // Rigidbody rb;
     CharacterController controller;
     Animator characterAnimator;
     private bool isMoving = false;
@@ -28,19 +27,15 @@ public class CharacterMovement : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-      // rb = GetComponent<Rigidbody>();
       controller = GetComponent<CharacterController>();
       characterAnimator = GetComponent<Animator>();
       counter = 23;
       coinText.text= "Remaining: " + counter;
+      uiobject.SetActive(false);
     }
 
     void FixedUpdate()
     {
-        // if (controller.isGrounded){
-        //     //Feed moveDirection with input.
-        //
-        // }
         moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         moveDirection = transform.TransformDirection(moveDirection);
         //Multiply it by speed.
@@ -52,7 +47,6 @@ public class CharacterMovement : MonoBehaviour
           TurnOffAnimations();
           characterAnimator.SetBool("Jump",true);
           moveDirection.y = jumpSpeed*1.5f;
-          // asource.PlayOneShot(jumpClip);
         }
 
         turner = Input.GetAxis("Mouse X") * sensitivity;
